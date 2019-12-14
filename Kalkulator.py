@@ -1,4 +1,38 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QMessageBox, QLineEdit, QGridLayout
+
+
+class WidgetMaker:
+    @staticmethod
+    def create_button(text, bind_function = None):
+        button = QPushButton(text)
+    @staticmethod
+    def create_output_line(is_readonly = 0):
+        line=QLineEdit("")
+        line.setReadOnly(is_readonly)
+        return line
+
+class Calculator:
+    def __init__(self):
+        self.app=QApplication([])
+        self.window=QWidget()
+        self.output1=WidgetMaker.create_output_line()
+        self.output2=WidgetMaker.create_output_line(1)
+        self.buttons=
+        {
+            '1': WidgetMaker.create_button('1'),
+            '2': WidgetMaker.create_button('2'),
+            '3': WidgetMaker.create_button('3'),
+            '4': WidgetMaker.create_button('4'),
+            '5': WidgetMaker.create_button('5'),
+            '6': WidgetMaker.create_button('6'),
+            '7': WidgetMaker.create_button('7'),
+            '8': WidgetMaker.create_button('8'),
+            '9': WidgetMaker.create_button('9'),
+            '0': WidgetMaker.create_button('0'),
+            'sin': WidgetMaker.create_button('sin(x)')
+            'cos': WidgetMaker.create_button('cos(x)')
+        }
+
 ###############################################################
 
 
@@ -15,12 +49,12 @@ def button_clicked(x):
 
 
 ##############################################################
-app = QApplication([])
-#app.setStyleSheet("QPushButton { margin: 100px; }")
-#app.setStyleSheet("QPushButton { margin: 10ex; }")
-#app.setStyleSheet("QPushButton { margin-left: 20px; }")
-#app.setStyleSheet("QPushButton { margin-right: 40px; margin-left: 20px; }")
-window = QWidget()
+# app = QApplication([])
+# app.setStyleSheet("QPushButton { margin: 100px; }")
+# app.setStyleSheet("QPushButton { margin: 10ex; }")
+# app.setStyleSheet("QPushButton { margin-left: 20px; }")
+# app.setStyleSheet("QPushButton { margin-right: 40px; margin-left: 20px; }")
+# window = QWidget()
 bsin = QPushButton('sin(x)')
 bcos = QPushButton('cos(x)')
 Top = QPushButton('Top')
